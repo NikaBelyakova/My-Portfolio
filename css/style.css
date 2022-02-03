@@ -280,7 +280,7 @@ body {
 
 .section1 {
   min-height: 100vh;
-  background-image: url(/img/section1.png);
+  background-image: url(../img/section1.png);
   background-color: #e6e7e9;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -289,7 +289,7 @@ body {
 
 .section2 {
   min-height: 100vh;
-  background-image: url(/img/section2.png);
+  background-image: url(../img/section2.png);
   background-color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -298,7 +298,7 @@ body {
 
 .section3 {
   min-height: 100vh;
-  background-image: url(/img/section3.png);
+  background-image: url(../img/section3.png);
   background-color: #efe3b7;
   display: -webkit-box;
   display: -ms-flexbox;
