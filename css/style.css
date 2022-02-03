@@ -1,0 +1,323 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+.section .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 45px;
+}
+.section .nav a {
+  font-size: 15px;
+  line-height: 20px;
+  color: #808080;
+  margin: 0 10px;
+}
+.section .nav a:hover {
+  border-bottom: 1px solid #5a5a5a;
+}
+.section .nav li:first-child a {
+  margin-left: 0;
+}
+
+.active {
+  font-weight: bold;
+}
+
+/* Шрифт palatinolinotype*/
+@font-face {
+  font-family: "Palatino Linotype";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Palatino Linotype"), url("/fonts/Palatino Linotype/palatinolinotype_roman.ttf") format("ttf");
+}
+@-webkit-keyframes move_arrow {
+  from {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  to {
+    -webkit-transform: translate(0px, 10px);
+            transform: translate(0px, 10px);
+  }
+}
+@keyframes move_arrow {
+  from {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  to {
+    -webkit-transform: translate(0px, 10px);
+            transform: translate(0px, 10px);
+  }
+}
+@-webkit-keyframes t {
+  to {
+    background-size: 150% 100%;
+  }
+}
+@keyframes t {
+  to {
+    background-size: 150% 100%;
+  }
+}
+@-webkit-keyframes b {
+  to {
+    background-position: -200% 0, 0 0;
+  }
+}
+@keyframes b {
+  to {
+    background-position: -200% 0, 0 0;
+  }
+}
+body {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 32px;
+  color: #7A7A7A;
+  position: relative;
+}
+
+.arrow_down {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  padding: 20px;
+  cursor: pointer;
+  -webkit-animation: move_arrow 1s infinite;
+          animation: move_arrow 1s infinite;
+}
+.arrow_down .arrow-down-long {
+  position: relative;
+  width: 3px;
+  height: 40px;
+  background-color: #000000;
+}
+.arrow_down .arrow-down-long::after {
+  position: absolute;
+  content: "";
+  top: 40px;
+  left: -4px;
+  border: 6px solid #ffffff;
+  border-bottom-width: 0;
+  border-top-color: #000000;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.link {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.reveal {
+  color: #0000;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #333333)), -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffffff));
+  background: linear-gradient(#333333 0 0), linear-gradient(#ffffff 0 0);
+  background-size: 0 100%;
+  background-position: 0 0;
+  background-clip: padding-box, text;
+  background-repeat: no-repeat;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+  -webkit-animation: t 1.2s 0.5s both, b 1.2s 1.3s both;
+          animation: t 1.2s 0.5s both, b 1.2s 1.3s both;
+}
+
+.section {
+  max-width: 1140px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.section .logo {
+  width: 188px;
+  height: 32px;
+  padding-bottom: 55px;
+}
+.section-about {
+  width: 50%;
+  padding: 282px 0 0 216px;
+  background: #000000;
+  opacity: 0.75;
+}
+.section-about__number {
+  font-family: Palatino Linotype;
+  font-weight: normal;
+  font-size: 69px;
+  line-height: 60px;
+  color: #808080;
+  margin-bottom: 15px;
+}
+.section-about__title {
+  font-size: 44px;
+  line-height: 52px;
+  color: #ffffff;
+  margin: 15px 0;
+}
+.section-about__more {
+  font-size: 17px;
+  line-height: 32px;
+  color: #7A7A7A;
+  margin: 15px 0;
+}
+
+.hello {
+  min-height: 100vh;
+}
+.hello-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 66px;
+}
+.hello__title, .hello__title span {
+  font-family: Palatino Linotype;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 174px;
+  line-height: 180px;
+  color: #333333;
+  margin-top: 114px;
+}
+.hello__link {
+  margin-top: 80px;
+}
+.hello__link .link {
+  font-size: 12px;
+  line-height: 32px;
+  color: #808080;
+}
+
+.section1 {
+  min-height: 100vh;
+  background-image: url(/img/section1.png);
+  background-color: #e6e7e9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section2 {
+  min-height: 100vh;
+  background-image: url(/img/section2.png);
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section3 {
+  min-height: 100vh;
+  background-image: url(/img/section3.png);
+  background-color: #efe3b7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer {
+  padding-top: 90px;
+  padding-left: 72px;
+  padding-bottom: 110px;
+  background-color: #fafafa;
+}
+.footer .nav {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+.footer-notification {
+  font-size: 13px;
+  line-height: 24px;
+  color: #B8B8B8;
+}

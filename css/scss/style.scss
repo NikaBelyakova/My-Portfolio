@@ -1,0 +1,251 @@
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+
+// Переменные для блока
+$clr_p:#7A7A7A;;
+$clr_a:#808080;;
+
+// Шаблон
+%nav {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px;
+    padding-bottom: 45px;
+	a {
+		font-size: 15px;
+		line-height: 20px;
+		color: $clr_a;
+		margin: 0 10px;
+
+		&:hover {
+		border-bottom: 1px solid #5a5a5a;
+		}
+		}
+		& li:first-child a{
+			margin-left: 0;
+		}
+		
+}
+
+%link_active {
+	font-weight: bold;
+}
+
+
+/* Шрифт palatinolinotype*/
+@font-face {
+	font-family: 'Palatino Linotype';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Palatino Linotype'),
+		url('/fonts/Palatino Linotype/palatinolinotype_roman.ttf') format('ttf')
+}
+
+
+// Анимации
+@keyframes move_arrow {
+	from {transform: translate(0px,0px);}
+	to {transform: translate(0px,10px);}
+}
+
+@keyframes t{
+	to {background-size:150% 100%}
+  }
+
+@keyframes b{
+	to {background-position:-200% 0,0 0}
+  }
+
+body {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17px;
+	line-height: 32px;
+	color: $clr_p;
+	position: relative;
+}
+
+
+.arrow_down {
+	position: fixed;
+	bottom: 30px;
+	left: 50%;
+
+	padding: 20px;
+
+	cursor: pointer;
+	
+	animation: move_arrow 1s infinite;
+	.arrow-down-long {
+		position: relative;
+		width: 3px;
+		height: 40px;
+		background-color: #000000;
+			&::after {
+			position: absolute;
+			content: "";
+			top: 40px;
+			left: -4px;
+			border: 6px solid #ffffff;
+			border-bottom-width: 0;
+			border-top-color: #000000;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			}
+	  }
+}
+
+.link {
+	font-family: inherit;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 20px;
+	color: #ffffff;
+}
+
+.active {
+	@extend %link_active;
+}
+
+.reveal {
+	color:#0000;
+	background:
+	  linear-gradient(#333333 0 0),
+	  linear-gradient(#ffffff 0 0);
+	background-size:0 100%;
+	background-position:0 0;
+	background-clip:padding-box,text;
+	background-repeat:no-repeat;
+	box-decoration-break: clone;
+	animation: 
+	 t 1.2s  .5s both,
+	 b 1.2s 1.3s both;
+  }
+
+.section {
+	max-width: 1140px;
+	margin: 0 auto;
+
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+
+	.logo {
+		width: 188px;
+		height: 32px;
+		padding-bottom: 55px;
+	}
+
+	.nav {
+		@extend %nav;
+	}
+
+	&-about {
+		width: 720px / 1440px *100%;
+
+		padding: 282px 0 0 216px;
+		
+		background: #000000;
+		opacity: 0.75;
+	}
+	
+	&-about__number {
+		font-family: Palatino Linotype;
+		font-weight: normal;
+		font-size: 69px;
+		line-height: 60px;
+		color: #808080;
+		margin-bottom: 15px;
+	}
+
+	&-about__title {
+		font-size: 44px;
+		line-height: 52px;
+		color: #ffffff;
+		margin: 15px 0;
+	}
+
+	&-about__more {
+		font-size: 17px;
+		line-height: 32px;
+		color: $clr_p;
+		margin: 15px 0;
+	}
+}
+
+.hello {
+	min-height: 100vh;
+
+	&-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 66px;
+		}
+		&__title, &__title span {
+			font-family: Palatino Linotype;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 174px;
+			line-height: 180px;
+			color: #333333;
+	
+			margin-top: 114px;			
+		}
+	
+		&__link {
+			margin-top: 80px;
+			.link {
+				font-size: 12px;
+				line-height: 32px;
+				color: $clr_a;
+			}
+		}
+	
+		
+}
+
+.section1 {
+	min-height: 100vh;
+
+	background-image: url(/img/section1.png);
+	background-color: #e6e7e9;
+
+	display: flex;
+}
+
+.section2 {
+	min-height: 100vh;
+
+	background-image: url(/img/section2.png);
+	background-color: #ffffff;
+
+	display: flex;
+}
+
+.section3 {
+	min-height: 100vh;
+	background-image: url(/img/section3.png);
+	background-color: #efe3b7;
+
+	display: flex;
+}
+
+.footer {
+	padding-top: 90px;
+	padding-left: 72px;
+	padding-bottom: 110px;
+
+	background-color: #fafafa;
+
+	.nav {
+		justify-content: start;
+	}
+
+	&-notification {
+		font-size: 13px;
+		line-height: 24px;
+		color: #B8B8B8;
+	}
+}
