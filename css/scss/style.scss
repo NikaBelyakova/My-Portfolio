@@ -95,6 +95,34 @@ body {
 	  }
 }
 
+.arrow_up {
+	position: fixed;
+	bottom: 30px;
+	left: 60%;
+
+	padding: 20px;
+	cursor: pointer;
+	
+	animation: move_arrow 1s infinite;
+	.arrow-up-long {
+		position: relative;
+		width: 3px;
+		height: 40px;
+		background-color: #000000;
+			&::after {
+			position: absolute;
+			content: "";
+			bottom: 40px;
+			left: -4px;
+			border: 6px solid #ffffff;
+			border-top-width: 0;
+			border-bottom-color: #000000;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			}
+	  }
+}
+
 .link {
 	font-family: inherit;
 	font-weight: bold;

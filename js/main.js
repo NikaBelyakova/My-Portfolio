@@ -1,4 +1,5 @@
-let arrow = document.getElementById('arrow');
+let arrowDown = document.getElementById('arrow-down');
+let arrowUp = document.getElementById('arrow-up');
 let footer = document.querySelector('.footer')
 
 function getCoords(elem) {
@@ -11,7 +12,7 @@ function getCoords(elem) {
 
 
 
-arrow.onclick = function () {
+arrowDown.onclick = function () {
     // получить полную высоту документа
     let scrollHeight = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight,
@@ -23,7 +24,7 @@ arrow.onclick = function () {
     // максимальнаые координаты для стрелки
     let arrowMaxCoord = scrollHeight - footerHeight / 2;
     // координаты стрелки
-    let arrowCoord = getCoords(arrow).bottom;
+    let arrowCoord = getCoords(arrowDown).bottom;
 
     if (arrowCoord <= arrowMaxCoord) {
         window.scrollBy({
@@ -31,9 +32,31 @@ arrow.onclick = function () {
             behavior: "smooth"
         });
     } else {
-        arrow.style.display = "none";
-        // arrow.style.transform = "rotate(180deg)";
-        // window.scrollTo(0, 0);
-    }
-    
+        arrowDown.style.display = "none";
+    }  
 };
+
+arrowUp.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
+let callback = function(entries, observer) {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            arrowUp.style.display = "block",
+            arrowDown.style.display = "none"
+        } else {
+            arrowUp.style.display = "none",
+            arrowDown.style.display = "block"
+        }
+    });
+};
+
+let observer = new IntersectionObserver (callback , {
+    treshold: 0.7
+});
+
+observer.observe(footer);
